@@ -1,9 +1,11 @@
 import React, {useState,useEffect,useMemo} from "react";
 import { Button, Typography,Steps } from "antd";
-import OnboardingSteps from "../components/OnboardingSteps";
 import Onboarding1 from "../components/Onboarding1";
 import Onboarding2 from "../components/Onboarding2";
-import { HomeOutlined,UserOutlined } from "@ant-design/icons";
+import Onboarding3 from "../components/Onboarding3";
+import { IonIcon } from "@ionic/react";
+
+//import { HomeOutlined,UserOutlined } from "@ant-design/icons";
 
 export default function Onboarding(){
     const [currentStep, setCurrentStep] = useState(0); 
@@ -13,31 +15,30 @@ export default function Onboarding(){
     }
     return(
         <div className="parentPage" id="onboarding">
-            <OnboardingSteps
-                //direction="vertical"
-                /*
-                want:
-                .ant-steps-horizontal
-                .ant-steps-label-vertical
-                */
+            <Steps
                 labelPlacement="vertical"
+                direction="horizontal"
+                responsive={false}
                 step={currentStep}
                 items={[
                     {                        
-                        //icon: <UserOutlined />,
+                        //icon from ionicons?
+                        
                         title: 'Profile',
                         content: <Onboarding1 nextStep={nextStep}/>
                     },
                     {
-                        //icon: <HomeOutlined/>, // antd does not have a school icon, maybe try BankOutlined?
+                        //icon from ionicons?
                         title: 'School',
                         content: <Onboarding2 nextStep={nextStep}/>
                     },
                     {
-
+                        //icon from ionicons?
+                        title: 'Match',
+                        content: <Onboarding3 nextStep={nextStep}/>
                     }
                 ]}
-            ></OnboardingSteps>
+            ></Steps>
         </div>
     );
 }

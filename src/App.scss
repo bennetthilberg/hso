@@ -61,5 +61,15 @@ body {
     
 }
 #onboarding{
-    
+    display: grid;
+    grid-template-rows: 1fr 64px;
+    .ant-steps{
+        grid-row: 2;   
+        .ant-steps-item{
+            .ant-steps-item-content{
+                
+                margin-top: 0;
+            }
+        }
+    }
 }
