@@ -4,7 +4,7 @@ import Onboarding1 from "../components/Onboarding1";
 import Onboarding2 from "../components/Onboarding2";
 import Onboarding3 from "../components/Onboarding3";
 import { motion } from "framer-motion";
-import { slideIn, slideOut } from "../transitions";
+import { slideInBouncy, slideOutBouncy } from "../transitions";
 
 
 //import { HomeOutlined,UserOutlined } from "@ant-design/icons";
@@ -20,7 +20,7 @@ export default function Onboarding() {
             initial="initial"
             animate="animate"
             exit="exit"
-            variants={slideIn}
+            variants={slideInBouncy}
         >
             <div className="parentPage" id="onboarding">
                 <motion.div className="onboardingCompMotionHolder">

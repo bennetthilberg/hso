@@ -3,7 +3,7 @@ import { Button, Typography } from "antd";
 import LearningSketching from "../assets/learning_sketching.svg";
 import { useNavigate } from "react-router-dom";
 import { RightCircleOutlined, RightOutlined, UserOutlined } from "@ant-design/icons";
-import { slideIn, slideOut } from "../transitions";
+import { slideInBouncy, slideOutBouncy } from "../transitions";
 import { motion } from "framer-motion";
 
 export default function Welcome() {
@@ -16,7 +16,7 @@ export default function Welcome() {
             initial="initial"
             animate="animate"
             exit="exit"
-            variants={slideIn}
+            variants={slideInBouncy}
         >
             <div className="parentPage" id="welcome">
                 <img src={LearningSketching} />
