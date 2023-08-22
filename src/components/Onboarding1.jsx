@@ -18,7 +18,7 @@ export default function Onboarding1({ nextStep }) {
 
     }
     return (
-        <div className="onboardingComp">
+        <div className="onboardingComp o1">
             <Typography className="main o1">{mainText}</Typography>
             <motion.div className="onboardingCompBody">
                 <Form>
@@ -97,7 +97,7 @@ export default function Onboarding1({ nextStep }) {
                     >
                         <Input
                             className="onboardingInput"
-                            placeholder="Phone Number"
+                            placeholder="Phone Number (Optional)"
                         />
                     </Form.Item>
                     <Form.Item>
