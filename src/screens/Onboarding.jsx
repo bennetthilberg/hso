@@ -12,8 +12,10 @@ import { slideInBouncy, slideOutBouncy } from "../transitions";
 export default function Onboarding() {
     const [currentStep, setCurrentStep] = useState(0);
 
-    function nextStep() {
-        setCurrentStep(currentStep + 1);
+    async function nextStep() {
+        console.log(`Before setCurrentStep, currentStep is ${currentStep}`);
+        await setCurrentStep(currentStep + 1);
+        console.log(`After setCurrentStep, currentStep is ${currentStep}`);
     }
     return (
         <motion.div
