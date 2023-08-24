@@ -12,10 +12,8 @@ import { slideInBouncy, slideOutBouncy } from "../transitions";
 export default function Onboarding() {
     const [currentStep, setCurrentStep] = useState(0);
 
-    async function nextStep() {
-        console.log(`Before setCurrentStep, currentStep is ${currentStep}`);
-        await setCurrentStep(currentStep + 1);
-        console.log(`After setCurrentStep, currentStep is ${currentStep}`);
+    function nextStep() {
+        setCurrentStep(currentStep + 1);
     }
     return (
         <motion.div
@@ -35,6 +33,7 @@ export default function Onboarding() {
                     direction="horizontal"
                     responsive={false}
                     step={currentStep}
+                    current={currentStep}
                     items={[
                         {
                             title: 'Profile',

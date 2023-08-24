@@ -21,7 +21,11 @@ export default function Onboarding1({ nextStep }) {
     function localNextStep() {
         setLocalStep(localStep + 1);
     }
-    function handleNext() {
+    function handleNext(isFinalStep) {
+        if(isFinalStep){
+            nextStep();
+            return;
+        }
         localNextStep();
         //nextStep();
     }
@@ -121,7 +125,7 @@ export default function Onboarding1({ nextStep }) {
                         <Form.Item>
                             <Button
                                 className="onboardingSubmitBtn"
-                                onClick={handleNext}
+                                onClick={() => {handleNext(false)}}
                                 htmlType='submit'
                                 type='primary'
 
@@ -190,12 +194,19 @@ export default function Onboarding1({ nextStep }) {
                             />
                         </Form.Item>
                         <Typography className="onboardingFormSubtext">2-Factor Authentication</Typography>
-                        <Typography className="onboardingFormSubsubtext" >Text me a code when I log in for added security</Typography>
+                        <Typography className="onboardingFormSubsubtext" id='o2fasubsub'>Text me a code when I log in for added security</Typography>
                         <Form.Item
                         name='2fa'
                         >
-                            <Switch id='o2faSwitch'/>
+                            <Switch id='o2faSwitch'
+                            
+                            />
                         </Form.Item>
+                        <Button
+                        type='primary'
+                        className="onboardingSubmitBtn"
+                        onClick={()=>handleNext(true)}
+                        >Next</Button>
                     </Form>
 
                 </motion.div>
