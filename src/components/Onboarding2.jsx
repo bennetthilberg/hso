@@ -1,9 +1,12 @@
 import React, {useState,useEffect} from "react";
+import Typography from "antd/es/typography/Typography";
 
-export default function Onboarding2({nextStep}){
+export default function Onboarding2({nextStep, onboardingUser}){
     return(
         <div>
-            <h1>Onboarding2</h1>
+            <Typography className="main o2">
+                Hi, {onboardingUser.firstName}! Where do you go to school?
+            </Typography>
         </div>
     );
 }

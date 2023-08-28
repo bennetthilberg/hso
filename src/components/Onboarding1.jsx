@@ -6,13 +6,17 @@ import PhoneInput from 'antd-phone-input'
 import { Button,Switch } from "antd";
 import { motion } from "framer-motion";
 import { slideInBouncy, slideOutBouncy } from "../transitions";
+import {onboardingUserAtom} from '../globalAtoms';
+import {useAtom} from 'jotai';
 
 
 
 export default function Onboarding1({ nextStep }) {
     const [localStep, setLocalStep] = useState(0);
     const [mainText, setMainText] = useState('Let\'s get your account set up.');
+    const [onboardingUser,setOnboardingUser] = useAtom(onboardingUserAtom);
     
+
     useEffect(() => {
         if (localStep == 1) {
             setMainText('Secure your account');
@@ -29,6 +33,11 @@ export default function Onboarding1({ nextStep }) {
         localNextStep();
         //nextStep();
     }
+    function handleFormFinish(values){
+        console.log(values);
+        setOnboardingUser({...onboardingUser,...values});
+        console.log(onboardingUser);
+    }
     // note: make the requireds true for prod
     return (
         <div className="onboardingComp o1">
@@ -43,7 +52,7 @@ export default function Onboarding1({ nextStep }) {
                     exit='exit'
                     variants={slideInBouncy}
                 >
-                    <Form>
+                    <Form onFinish={handleFormFinish}>
                         <Typography className="onboardingFormSubtext">What's your name?</Typography>
                         <Form.Item
                             className='o1'
@@ -53,6 +62,7 @@ export default function Onboarding1({ nextStep }) {
                                 required: false,
                                 message: 'Please input your first name!'
                             }]}
+                            
                         >
                             <Input
                                 className="onboardingInput"
@@ -67,6 +77,7 @@ export default function Onboarding1({ nextStep }) {
                                 required: false,
                                 message: 'Please input your last name!'
                             }]}
+                            
                         >
                             <Input
                                 className="onboardingInput"
@@ -84,6 +95,7 @@ export default function Onboarding1({ nextStep }) {
                             rules={[{
                                 required: false,
                             }]}
+                            
                         >
                             <Input
                                 className="onboardingInput"
@@ -102,6 +114,7 @@ export default function Onboarding1({ nextStep }) {
                             rules={[{
                                 required: false,
                             }]}
+                            
                         >
                             <Input
                                 className="onboardingInput"
@@ -116,6 +129,7 @@ export default function Onboarding1({ nextStep }) {
                             rules={[{
                                 required: false,
                             }]}
+                            
                         >
                             <Input
                                 className="onboardingInput"
@@ -128,6 +142,7 @@ export default function Onboarding1({ nextStep }) {
                                 onClick={() => {handleNext(false)}}
                                 htmlType='submit'
                                 type='primary'
+                                
 
                             >Next</Button>
                         </Form.Item>
@@ -147,12 +162,13 @@ export default function Onboarding1({ nextStep }) {
                     variants={slideInBouncy}
                 >
 
-                    <Form>
+                    <Form onFinish={handleFormFinish}>
                         <Typography className="onboardingFormSubtext">Pick a password</Typography>
                         <Form.Item
                             name="password"
                             className='o1'
-                            rules={[
+                            
+                            /*rules={[
                                 ({ getFieldValue }) => ({
                                     validator(_, value) {                                
                                         if (value.length >= 8) {
@@ -161,7 +177,7 @@ export default function Onboarding1({ nextStep }) {
                                         return Promise.reject(new Error('Too short!'));
                                     }
                                 })
-                            ]}
+                            ]}*/
                         >
                             <Input.Password
                                 placeholder="Password"
@@ -174,32 +190,35 @@ export default function Onboarding1({ nextStep }) {
                             name="confirm"
                             dependencies={['password']}
                             hasFeedback
+                            
                             rules={[
                                 {
                                     required: true,
                                     message: 'Please confirm your password!',
                                 },
-                                ({ getFieldValue }) => ({
+                                /*({ getFieldValue }) => ({
                                     validator(_, value) {
                                         if (!value || getFieldValue('password') === value) {
                                             return Promise.resolve();
                                         }
                                         return Promise.reject(new Error('The new password that you entered do not match!'));
                                     },
-                                }),
+                                }),*/
                             ]}
                         >
                             <Input.Password 
                             className="onboardingInput"
+                            placeholder="Confirm Password"
                             />
                         </Form.Item>
                         <Typography className="onboardingFormSubtext">2-Factor Authentication</Typography>
                         <Typography className="onboardingFormSubsubtext" id='o2fasubsub'>Text me a code when I log in for added security</Typography>
                         <Form.Item
+                        
                         name='2fa'
                         >
                             <Switch id='o2faSwitch'
-                            
+                            checked={false}
                             />
                         </Form.Item>
                         <Button
