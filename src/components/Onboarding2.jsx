@@ -9,7 +9,7 @@ export default function Onboarding2({nextStep}){
         console.log(onboardingUser);
     },[])
     return(
-        <div>
+        <div className="onboardingComp">
             <Typography className="main o2">
                 Hi, {onboardingUser.firstName}! Where do you go to school?
             </Typography>
