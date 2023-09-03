@@ -15,6 +15,7 @@ export default function Onboarding1({ nextStep }) {
     const [localStep, setLocalStep] = useState(0);
     const [mainText, setMainText] = useState('Let\'s get your account set up.');
     const [onboardingUser, setOnboardingUser] = useAtom(onboardingUserAtom);
+    const [switch2fa, setSwitch2fa] = useState(false);
 
 
     useEffect(() => {
@@ -231,7 +232,8 @@ export default function Onboarding1({ nextStep }) {
                             name='2fa'
                         >
                             <Switch id='o2faSwitch'
-                                checked={false}
+                                onClick = {() => setSwitch2fa(!switch2fa)}
+                                
                             />
                         </Form.Item>
                         <Button
