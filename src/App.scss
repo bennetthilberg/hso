@@ -193,6 +193,7 @@ body {
 
 #schoolNameST {
     margin-top: -6px;
+    margin-bottom: 4px;
 }
 
 .onboardingSelect {
@@ -210,10 +211,26 @@ body {
 
 
 }
-.onboardingSelect:not(.ant-select-open){
+.onboardingSelect:not(.ant-select-open):not(.ant-select-auto-complete):not(.ant-select.ant-select-in-form-item.ant-select-status-success.onboardingSelect.o.sel){
     .ant-select-selector{
         border: 1.5px solid $almostBlack !important;
     }
+}
+.onboardingSelect.ant-select-auto-complete:not(.ant-select-focused):not(.ant-select-status-success):not(.ant-select.ant-select-in-form-item.ant-select-status-success.onboardingSelect.o.sel){
+    border: 1.5px solid $almostBlack;
+}
+.ant-select-status-success{
+    border: none;
+    .ant-select-selector{
+        border-color: #50cc68 !important;
+        z-index: 999;
+    }
+}
+.ant-select.ant-select-in-form-item.ant-select-status-success.onboardingSelect.o.sel{
+    border-color: #50cc68 !important;
+}
+.onboardingSelect{
+    transition: border-color 0.2s ease-in-out !important;
 }
 .ant-select-selection-placeholder{
     align-self: center;
@@ -226,7 +243,13 @@ body {
 
 .ant-select-selection-item{
     color: rgba(51, 51, 51, 0.88);
-    font-size: 14px;
+    font-size: 16px;
     align-self: center;
+
+}
+.ant-select-selection-search-input{
+    height: 100% !important;
+    font-size: 16px;
+    color: rgba(51, 51, 51, 0.88);
 
 }
