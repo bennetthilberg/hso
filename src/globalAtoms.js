@@ -1,7 +1,7 @@
 import {atom} from 'jotai';
 
 export const onboardingUserAtom = atom({});
-export const onboardingQuizProgressAtom = atom({
+export const quizTrackerAtom = atom({
     currentQuestion: 0,
 });
 

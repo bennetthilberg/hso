@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useAtom } from "jotai";
-import { onboardingUserAtom, onboardingQuizProgressAtom } from "../globalAtoms";
+import { onboardingUserAtom, quizTrackerAtom } from "../globalAtoms";
 import { Form, Input, Select, AutoComplete, Button } from "antd";
 import Typography from 'antd/es/typography'
 import '../secondarystyles/onboardingQuiz.scss' // *not using App.scss
@@ -29,19 +29,27 @@ const quizPrompts = [
         figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
     }
 ]
+// figures are strings of the path to the image, not the actual image
 
 export default function OnboardingQuiz() {
     const [onboardingUser, setOnboardingUser] = useAtom(onboardingUserAtom);
-    const [onboardingQuizProgress, setOnboardingQuizProgress] = useAtom(onboardingQuizProgressAtom);
-    console.log(onboardingUser);
+    const [quizTracker, setQuizTracker] = useAtom(quizTrackerAtom);
+    const progress = useMemo(() => quizTracker.currentQuestion, [quizTracker.currentQuestion]);
+    // progress is the index of the current question in quizPrompts
+    const [currentQuestion, setCurrentQuestion] = useState(quizPrompts[progress]);
+    // current question is the actual question object in quizPrompts
+
+    
     return (
         <div id='onboardingQuizComp'>
-            <PromptHolder>
+            <PromptHolder
+                prompt={currentQuestion.prompt}
+            />
 
-            </PromptHolder>
-            <AnswerMenu>
 
-            </AnswerMenu>
+            <AnswerMenu />
+
+
         </div>
     );
 }

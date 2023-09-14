@@ -1,9 +1,16 @@
 import React, {useEffect, useState} from "react";
+import Typography from "antd/es/typography/Typography";
+import Title from "antd/es/skeleton/Title";
 
-export default function PromptHolder() {
+export default function PromptHolder({prompt}) {
+    useEffect( () => {
+        console.log(`prompt prop: ${prompt}`);
+    }, [])
     return(
         <div className="promptHolder">
-            im prompt holder
+            <Typography className="promptText">
+                {prompt}
+            </Typography>
         </div>
     );
 }
