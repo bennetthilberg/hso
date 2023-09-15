@@ -47,7 +47,9 @@ export default function OnboardingQuiz() {
             />
 
 
-            <AnswerMenu />
+            <AnswerMenu 
+                options={currentQuestion.options}
+            />
 
 
         </div>
