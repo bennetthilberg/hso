@@ -1,11 +1,11 @@
 $almostBlack: rgba(51, 51, 51, 0.88);
+$themeGreenPrimary: #2BBF4E;
 
 #onboardingQuizComp{
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 174, 255, 0.075);
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 3fr 2fr;
 }
 #promptHolder{
     grid-row: 1/2;
@@ -21,10 +21,20 @@ $almostBlack: rgba(51, 51, 51, 0.88);
 .answerMenu{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin-bottom: 12px; // so we dont get too close to the steps display
     .answerOption{
         flex: 1;
-        border: 2px solid $almostBlack;
+        max-height: 88px;
+        background-color: lighten($themeGreenPrimary, 10%);
+        margin: 6px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .answerOptionText{
+            color: white;
+            font-size: 40px;
+        }
     }
-
 }

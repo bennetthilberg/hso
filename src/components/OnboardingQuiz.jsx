@@ -49,6 +49,7 @@ export default function OnboardingQuiz() {
 
             <AnswerMenu 
                 options={currentQuestion.options}
+                figures={currentQuestion.figures}
             />
 
 
