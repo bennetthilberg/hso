@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from "react";
 import Typography from "antd/es/typography/Typography";
+import { Button } from "antd";
 
 export default function AnswerMenu({options, figures}) {
     return(
@@ -7,13 +8,16 @@ export default function AnswerMenu({options, figures}) {
             {
                 options.map((option, index) => {
                     return(
-                        <div className="answerOption" key={index}>
+                        <Button type='primary' className="answerOption" key={index}>
                             <Typography className="answerOptionText">
                             {option}
                             </Typography>
-                            <img src={figures[index]} />
+                            <span>
+                                <img src={figures[index]} className="answerMenuImg"/>
+                            </span>
                             {/* todo fix image sizing*/}
-                        </div>
+                        </Button>
+                        // todo add cool lookin box shadow
                     );
                 })
             }

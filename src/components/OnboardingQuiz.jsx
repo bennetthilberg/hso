@@ -6,10 +6,13 @@ import Typography from 'antd/es/typography'
 import '../secondarystyles/onboardingQuiz.scss' // *not using App.scss
 import AnswerMenu from "./AnswerMenu";
 import PromptHolder from "./PromptHolder";
+import { motion } from "framer-motion";
+import { slideInBouncy, slideOutBouncy } from "../transitions";
 
 const quizPrompts = [
     {
         prompt: 'Lorem ipsum or ipsum lorem?',
+        promptFigure: 'https://via.placeholder.com/150',
         options: ['Lorem ipsum', 'Ipsum lorem'],
         figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
     },
@@ -39,20 +42,26 @@ export default function OnboardingQuiz() {
     const [currentQuestion, setCurrentQuestion] = useState(quizPrompts[progress]);
     // current question is the actual question object in quizPrompts
 
-    
+
     return (
-        <div id='onboardingQuizComp'>
+        <motion.div id='onboardingQuizComp'
+            animate="animate"
+            initial="initial"
+            exit="exit"
+            variants={slideInBouncy}
+        >
             <PromptHolder
                 prompt={currentQuestion.prompt}
+                promptFigure={currentQuestion.promptFigure}
             />
 
 
-            <AnswerMenu 
+            <AnswerMenu
                 options={currentQuestion.options}
                 figures={currentQuestion.figures}
             />
 
 
-        </div>
+        </motion.div>
     );
 }
