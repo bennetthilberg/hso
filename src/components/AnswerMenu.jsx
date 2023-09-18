@@ -15,9 +15,9 @@ export default function AnswerMenu({options, figures}) {
                             <span>
                                 <img src={figures[index]} className="answerMenuImg"/>
                             </span>
-                            {/* todo fix image sizing*/}
+                            
                         </Button>
-                        // todo add cool lookin box shadow
+                        
                     );
                 })
             }
