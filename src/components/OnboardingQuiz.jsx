@@ -9,6 +9,7 @@ import PromptHolder from "./PromptHolder";
 import { motion } from "framer-motion";
 import { slideInBouncy, slideOutBouncy } from "../transitions";
 
+// keep options short, 1-3 words
 const quizPrompts = [
     {
         prompt: 'Lorem ipsum or ipsum lorem?',
@@ -18,7 +19,7 @@ const quizPrompts = [
     },
     {
         prompt: 'One fish two fish or red fish blue fish?',
-        options: ['One fish two fish', 'Red fish blue fish'],
+        options: ['Oftf', 'Rfbf'],
         figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
     },
     {
@@ -37,20 +38,29 @@ const quizPrompts = [
 export default function OnboardingQuiz() {
     const [onboardingUser, setOnboardingUser] = useAtom(onboardingUserAtom);
     const [quizTracker, setQuizTracker] = useAtom(quizTrackerAtom);
-    const progress = useMemo(() => quizTracker.globalCurrentQuestion/*, [quizTracker.currentQuestion]*/);
+
+    const progress = useMemo(() => quizTracker.globalCurrentQuestion);
     // progress is the index of the current question in quizPrompts
+
     const currentQuestion = useMemo(() => quizPrompts[progress])
-    //const [currentQuestion, setCurrentQuestion] = useState(quizPrompts[progress]);
-
-    // TODO: currentQuestion is fucked, memoize it and have it be based on progress somehow. Rn it doesn't change (i think)
-
     // current question is the actual question object in quizPrompts
+
+    /*
+        quizPrompts is constant
+        quizTracker -> quizTracker.globalCurrentQuestion -> progress -> currentQuestion
+    */
 
     function onAnswerSelect(answer) {
         // 'answer' is the index of the answer selected in currentQuestion.options array
         console.log('answer arg is:');
         console.log(answer);
         console.log(`user answered option ${answer} which is '${currentQuestion.options[answer]}'`)
+        setQuizTracker(oldQuizTracker => {
+            return {
+                ...oldQuizTracker,
+                globalCurrentQuestion: oldQuizTracker.globalCurrentQuestion + 1
+            }
+        })
     }
 
     return (

@@ -31,6 +31,7 @@ $themeGreenPrimary: #2BBF4E;
     justify-content: center;
     margin-bottom: 12px; // so we dont get too close to the steps display
     .answerOption{
+        max-width: 100%;
         flex: 1;
         max-height: 88px;
         background-color: lighten($themeGreenPrimary, 10%);
