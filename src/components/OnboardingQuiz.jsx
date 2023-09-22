@@ -37,11 +37,21 @@ const quizPrompts = [
 export default function OnboardingQuiz() {
     const [onboardingUser, setOnboardingUser] = useAtom(onboardingUserAtom);
     const [quizTracker, setQuizTracker] = useAtom(quizTrackerAtom);
-    const progress = useMemo(() => quizTracker.currentQuestion, [quizTracker.currentQuestion]);
+    const progress = useMemo(() => quizTracker.globalCurrentQuestion/*, [quizTracker.currentQuestion]*/);
     // progress is the index of the current question in quizPrompts
-    const [currentQuestion, setCurrentQuestion] = useState(quizPrompts[progress]);
+    const currentQuestion = useMemo(() => quizPrompts[progress])
+    //const [currentQuestion, setCurrentQuestion] = useState(quizPrompts[progress]);
+
+    // TODO: currentQuestion is fucked, memoize it and have it be based on progress somehow. Rn it doesn't change (i think)
+
     // current question is the actual question object in quizPrompts
 
+    function onAnswerSelect(answer) {
+        // 'answer' is the index of the answer selected in currentQuestion.options array
+        console.log('answer arg is:');
+        console.log(answer);
+        console.log(`user answered option ${answer} which is '${currentQuestion.options[answer]}'`)
+    }
 
     return (
         <motion.div id='onboardingQuizComp'
@@ -59,6 +69,7 @@ export default function OnboardingQuiz() {
             <AnswerMenu
                 options={currentQuestion.options}
                 figures={currentQuestion.figures}
+                onAnswerSelect={onAnswerSelect}
             />
 
 
