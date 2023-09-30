@@ -6,6 +6,7 @@ import Onboarding3 from "../components/Onboarding3";
 import { motion } from "framer-motion";
 import { slideInBouncy, slideOutBouncy } from "../transitions";
 import OnboardingQuiz from "../components/OnboardingQuiz";
+import QuizGetReady from "../components/QuizGetReady";
 
 
 //import { HomeOutlined,UserOutlined } from "@ant-design/icons";
@@ -27,7 +28,8 @@ export default function Onboarding() {
                 <motion.div className="onboardingCompMotionHolder">
                     {currentStep === 0 && <Onboarding1 nextStep={nextStep} />}
                     {currentStep === 1 && <Onboarding2 nextStep={nextStep} />}
-                    {currentStep === 2 && <OnboardingQuiz nextStep={nextStep} />}
+                    {currentStep === 2 && <QuizGetReady nextStep={nextStep} />}
+                    {currentStep === 3 && <OnboardingQuiz nextStep={nextStep} />}
                 </motion.div>
                 <Steps
                     labelPlacement="vertical"

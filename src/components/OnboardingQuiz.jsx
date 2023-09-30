@@ -51,6 +51,7 @@ export default function OnboardingQuiz() {
     */
 
     const [showNextQuestion, setShowNextQuestion] = useState(false);
+    
 
     useEffect(() => {
         if(showNextQuestion){
@@ -65,7 +66,6 @@ export default function OnboardingQuiz() {
         console.log("showNextQuestion changed:", showNextQuestion);
     }, [showNextQuestion]);
     
-    
  
     function onAnswerSelect(answer) {
         // 'answer' is the index of the answer selected in currentQuestion.options array
@@ -78,7 +78,9 @@ export default function OnboardingQuiz() {
                 globalCurrentQuestion: oldQuizTracker.globalCurrentQuestion + 1
             }
         })* this is now done in useEffect, remove when sure it works*/
+        //setIsAnimatingOut(true);
         setShowNextQuestion(true);
+        
     }
 
     return (

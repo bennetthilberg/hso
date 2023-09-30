@@ -1,5 +1,9 @@
 $almostBlack: rgba(51, 51, 51, 0.88);
 
+@mixin textCenter{
+    display: grid;
+    place-items: center;
+}
 #root {
 
     height: calc(100vh - 16px);
@@ -252,4 +256,14 @@ body {
     font-size: 16px;
     color: rgba(51, 51, 51, 0.88);
 
+}
+.oInfoTitle{
+    font-size: 48px;
+    line-height: 1.25;
+    @include textCenter;
+}
+.oInfosubTitle{
+    font-size: 24px;
+    line-height: 1.25;
+    @include textCenter;
 }
