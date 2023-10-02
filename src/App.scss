@@ -1,8 +1,14 @@
 $almostBlack: rgba(51, 51, 51, 0.88);
 
-@mixin textCenter{
+@mixin pleaseGodCenter{
     display: grid;
     place-items: center;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
 }
 #root {
 
@@ -257,13 +263,25 @@ body {
     color: rgba(51, 51, 51, 0.88);
 
 }
+.qgrComp{
+    display: grid;
+    grid-template-rows: 1fr 64px 48px;
+    height: 100%;
+    width: 100%;
+    // todo get the title in row 2 and the button in row 3
+    // todo get image in row 1
+}
 .oInfoTitle{
     font-size: 48px;
     line-height: 1.25;
-    @include textCenter;
+    @include pleaseGodCenter;
 }
 .oInfosubTitle{
     font-size: 24px;
     line-height: 1.25;
-    @include textCenter;
+    @include pleaseGodCenter;
+    
+}
+#qgrButton{
+    
 }

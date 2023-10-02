@@ -8,7 +8,7 @@ export default function QuizGetReady({nextStep}) {
         nextStep();
     }
     return (
-        <motion.div className="onboardingQuizComp"
+        <motion.div className="onboardingQuizComp qgrComp"
             animate="animate"
             initial="initial"
             exit="exit"
@@ -18,11 +18,11 @@ export default function QuizGetReady({nextStep}) {
             <Typography  className="onboardingFormSubtext oInfoTitle">
                 Time for a quiz!
             </Typography>
-            <Typography className="onboardingFormSubtext oInfoSubtitle">
+            <Typography className="onboardingFormSubtext oInfosubTitle" >
                 We'll ask you a few questions to help match you with the perfect oppurtunities.
             </Typography>
             
-            <Button className="onboardingButton" type="primary" size="large">
+            <Button id='qgrButton' type="primary" size="large">
                 Begin
             </Button>
         </motion.div>
