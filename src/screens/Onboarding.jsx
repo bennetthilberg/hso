@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { slideInBouncy, slideOutBouncy } from "../transitions";
 import OnboardingQuiz from "../components/OnboardingQuiz";
 import QuizGetReady from "../components/QuizGetReady";
+import QuizDone from "../components/QuizDone";
 
 
 //import { HomeOutlined,UserOutlined } from "@ant-design/icons";
@@ -30,6 +31,7 @@ export default function Onboarding() {
                     {currentStep === 1 && <Onboarding2 nextStep={nextStep} />}
                     {currentStep === 2 && <QuizGetReady nextStep={nextStep} />}
                     {currentStep === 3 && <OnboardingQuiz nextStep={nextStep} />}
+                    {currentStep === 4 && <QuizDone nextStep={nextStep}/>}
                 </motion.div>
                 <Steps
                     labelPlacement="vertical"

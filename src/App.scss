@@ -295,7 +295,7 @@ body {
 }
 .qgrContent{  
     position: absolute;
-    bottom: 25px;
+    bottom: 48px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -309,6 +309,30 @@ body {
     place-items: center;
 }
 .qgrImage{
-    height: 90%;
-    width: 90%;
+    height: 85%;
+    width: 85%;
+}
+.qdTitle{
+    text-align: center;
+}
+.qdComp{
+    height: 100%;
+    width: 100%;
+}
+.loadingDisplay{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 220px 1fr;
+    place-items: center;
+}
+.qdGifHolder{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom : 60px;
+}
+.qdGif{
+    position: relative;
+    left: 9px;
 }

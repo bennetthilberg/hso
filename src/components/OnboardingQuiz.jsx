@@ -12,30 +12,46 @@ import { slideInBouncy, slideOutBouncy } from "../transitions";
 // keep options short, 1-3 words
 const quizPrompts = [
     {
-        prompt: 'Lorem ipsum or ipsum lorem?',
+        prompt: 'Would you prefer an internship, or research?',
         promptFigure: 'https://via.placeholder.com/150',
-        options: ['Lorem ipsum', 'Ipsum lorem'],
+        options: ['Internship', 'Research'],
         figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
     },
     {
-        prompt: 'One fish two fish or red fish blue fish?',
-        options: ['Oftf', 'Rfbf'],
+        prompt: 'Do you prefer individual or team work?',
+        promptFigure: 'https://via.placeholder.com/150',
+        options: ['Individual', 'Team'],
         figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
     },
     {
-        prompt: 'Alpha, bravo, or charlie?',
-        options: ['Alpha', 'Bravo', 'Charlie'],
+        prompt: 'Which of these fields interests you the most?',
+        promptFigure: 'https://via.placeholder.com/150',
+        options: ['Finance', 'Technology', 'Health', 'Engineering'],
+        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+    },
+    {
+        prompt: 'How much time do you have to commit per week?',
+        promptFigure: 'https://via.placeholder.com/150',
+        options: ['1-5 hours', '6-10 hours', '11-20 hours', '21+ hours'],
+        figures: []
+    },
+    {
+        prompt: 'Are you looking for paid or unpaid opportunities?',
+        promptFigure: 'https://via.placeholder.com/150',
+        options: ['Paid', 'Unpaid'],
+        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+    },
+    {
+        prompt: 'Do you want in-person, remote, or hybrid opportunities?',
+        promptFigure: 'https://via.placeholder.com/150',
+        options: ['In-person', 'Remote', 'Hybrid'],
         figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150']
     },
-    {
-        prompt: 'Egg zample or Eggz Ample?',
-        options: ['Egg zample', 'Eggz Ample'],
-        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
-    }
+    
 ]
 // figures are strings of the path to the image, not the actual image
 
-export default function OnboardingQuiz() {
+export default function OnboardingQuiz({nextStep}) {
     const [onboardingUser, setOnboardingUser] = useAtom(onboardingUserAtom);
     const [quizTracker, setQuizTracker] = useAtom(quizTrackerAtom);
 
@@ -61,6 +77,10 @@ export default function OnboardingQuiz() {
     }, [showNextQuestion, setQuizTracker]);
     useEffect(() => {
         console.log("Current progress:", progress);
+        if(progress === quizPrompts.length){
+            console.log("Quiz finished");
+            nextStep();
+        }
     }, [progress]);
     useEffect(() => {
         console.log("showNextQuestion changed:", showNextQuestion);
