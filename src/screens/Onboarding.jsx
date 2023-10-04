@@ -14,6 +14,26 @@ import QuizDone from "../components/QuizDone";
 
 export default function Onboarding() {
     const [currentStep, setCurrentStep] = useState(0);
+    const stepsForAntd = useMemo(() => {
+        if(currentStep == 0){
+            return 0;
+        }
+        else if(currentStep == 1){
+            return 1;
+        }
+        else if(currentStep == 2){
+            return 2;
+        }
+        else if(currentStep == 3){
+            return 2;
+        }
+        else if(currentStep == 4){
+            return 2;
+        }
+        else{
+            return currentStep;
+        }
+    }, [currentStep]);
 
     function nextStep() {
         setCurrentStep(currentStep + 1);
@@ -37,8 +57,8 @@ export default function Onboarding() {
                     labelPlacement="vertical"
                     direction="horizontal"
                     responsive={false}
-                    step={currentStep}
-                    current={currentStep}
+                    step={stepsForAntd}
+                    current={stepsForAntd}
                     items={[
                         {
                             title: 'Profile',

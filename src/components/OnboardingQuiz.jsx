@@ -92,6 +92,18 @@ export default function OnboardingQuiz({nextStep}) {
         console.log('answer arg is:');
         console.log(answer);
         console.log(`user answered option ${answer} which is '${currentQuestion.options[answer]}'`)
+        setQuizTracker(
+            (old) => {
+                return (
+                    {
+                        ...old,
+                        responses: [...old.responses, currentQuestion.options[answer]]
+                    }
+                )
+            }
+        );
+        console.log('responses is now:');
+        console.log(quizTracker.responses);
         /*setQuizTracker(oldQuizTracker => {
             return {
                 ...oldQuizTracker,

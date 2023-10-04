@@ -4,10 +4,14 @@ import { motion } from "framer-motion";
 import { slideInBouncy, slideOutBouncy } from "../transitions";
 import { useAtom } from "jotai";
 import { onboardingUserAtom } from "../globalAtoms";
+import { useNavigate } from "react-router-dom";
 
 export default function QuizDone({ nextStep }) {
+    const navigate = useNavigate();
     useEffect(() => {
-        setTimeout(() => { nextStep() }, 3000);
+        setTimeout(() => { 
+            navigate('/results');
+         }, 3000);
     }, [])
     return (
         <motion.div
@@ -19,6 +23,7 @@ export default function QuizDone({ nextStep }) {
             <LoadingScreen />
         </motion.div>
     );
+    
 }
 function LoadingScreen() {
     return (
