@@ -1,0 +1,22 @@
+import React, { useState, useEffect } from "react";
+import Typography from "antd/es/typography/Typography";
+import { Button, Avatar } from "antd";
+
+export default function ResultCard({ title, desc, mentorName, avatarSrc }) {
+    return (
+        <div className="resultCard">
+            <div className="cardAvatarHolder">
+                <Avatar icon="user" src={avatarSrc} size={92}/>
+            </div>
+            <div className="cardHeader">
+                <Typography>
+                    <h2>
+                        <span className="headerStrong">{title}</span><br />
+                        with <span className="headerStrong">{mentorName}</span>
+                    </h2>
+                </Typography>
+            </div>
+
+        </div>
+    );
+}

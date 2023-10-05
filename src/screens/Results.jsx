@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Steps } from "antd";
+import { Steps, Typography } from "antd";
 import { motion } from "framer-motion";
 import '../secondarystyles/Results.scss';
 import { onboardingUserAtom } from "../globalAtoms";
 import { useAtom } from "jotai";
 import { slideInBouncy } from "../transitions";
+import ResultCard from "../components/ResultCard";
 
 export default function Results() {
     const [onboardingUser, setOnboardingUser] = useAtom(onboardingUserAtom);
@@ -23,8 +24,15 @@ export default function Results() {
             variants={slideInBouncy}
         >
             <div className="resultsDisplay">
-                <h1>{onboardingUser.firstName}, we found 7 oppurtunities for you!</h1>
+                <Typography><h1 className="resultHeading">{onboardingUser.firstName}, we found 7 oppurtunities for you!</h1></Typography>
+                <ResultCard 
+                title={'Lorem Ipsum'} 
+                mentorName={'Dr. Zuck'}
+                desc={'The quick brown fox jumps over the lazy dog. One fish two fish.'}
+                avatarSrc={'src/assets/zuck-avatar.jpg'}
+                />
             </div>
+            
             <Steps
                 labelPlacement="vertical"
                 direction="horizontal"
@@ -43,6 +51,9 @@ export default function Results() {
                     }
                 ]}
             ></Steps>
+            
+
+            
         </motion.div>
     );
 }

@@ -4,3 +4,40 @@
     display: grid;
     grid-template-rows: 1fr 76px;
 }
+*{
+    color: black;
+}
+.resultHeading{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.resultCard{
+    height: 240px;    
+    background-color: lighten(#11c93c, 25%);
+    padding: 6px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 0.2fr 1.25fr;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+}
+.cardAvatarHolder{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    position: relative;
+    top: 5px;
+    left: 25px;
+}
+.cardHeader{
+    grid-row: 1/2;
+    grid-column: 2/-1;
+    margin-top: 12px;
+}
+h2{
+    font-weight: 400 !important;
+    margin: 0;
+    margin-bottom: 0 !important;
+}
+.headerStrong{
+    font-weight: 800;
+}
