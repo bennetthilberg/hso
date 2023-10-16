@@ -16,7 +16,14 @@ export default function ResultCard({ title, desc, mentorName, avatarSrc }) {
                     </h2>
                 </Typography>
             </div>
-
+            <div className="cardDesc">
+                <Typography>
+                    {desc}
+                </Typography>
+            </div>
+            <div className="cardButtonHolder">
+                <Button className='cardButton'type="primary">Contact</Button>
+            </div>
         </div>
     );
 }

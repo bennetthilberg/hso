@@ -28,12 +28,26 @@ export default function Results() {
                 <ResultCard 
                 title={'Lorem Ipsum'} 
                 mentorName={'Dr. Zuck'}
-                desc={'The quick brown fox jumps over the lazy dog. One fish two fish.'}
+                desc={'The quick brown fox jumps over the lazy dog. One fish two.'}
+                avatarSrc={'src/assets/zuck-avatar.jpg'}
+                />
+                <ResultCard 
+                title={'Lorem Ipsum'} 
+                mentorName={'Dr. Zuck'}
+                desc={'The quick brown fox jumps over the lazy dog. One fish two.'}
+                avatarSrc={'src/assets/zuck-avatar.jpg'}
+                />
+               <ResultCard 
+                title={'Lorem Ipsum'} 
+                mentorName={'Dr. Zuck'}
+                desc={'The quick brown fox jumps over the lazy dog. One fish two.'}
                 avatarSrc={'src/assets/zuck-avatar.jpg'}
                 />
             </div>
             
+           
             <Steps
+            className="resultsSteps"
                 labelPlacement="vertical"
                 direction="horizontal"
                 responsive={false}
