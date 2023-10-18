@@ -8,6 +8,7 @@ import { slideInBouncy, slideOutBouncy } from "../transitions";
 import OnboardingQuiz from "../components/OnboardingQuiz";
 import QuizGetReady from "../components/QuizGetReady";
 import QuizDone from "../components/QuizDone";
+import "../App.scss";
 
 
 //import { HomeOutlined,UserOutlined } from "@ant-design/icons";

@@ -24,7 +24,7 @@ export default function Results() {
             variants={slideInBouncy}
         >
             <div className="resultsDisplay">
-                <Typography><h1 className="resultHeading">{onboardingUser.firstName}, we found 7 oppurtunities for you!</h1></Typography>
+                <Typography className="resultAnnouncement"><h1 className="resultHeading">{onboardingUser.firstName}, we found 7 oppurtunities for you!</h1></Typography>
                 <ResultCard 
                 title={'Lorem Ipsum'} 
                 mentorName={'Dr. Zuck'}
@@ -47,7 +47,7 @@ export default function Results() {
             
            
             <Steps
-            className="resultsSteps"
+                className="resultsSteps"
                 labelPlacement="vertical"
                 direction="horizontal"
                 responsive={false}

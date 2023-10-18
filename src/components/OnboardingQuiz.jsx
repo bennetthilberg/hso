@@ -13,39 +13,39 @@ import { slideInBouncy, slideOutBouncy } from "../transitions";
 const quizPrompts = [
     {
         prompt: 'Would you prefer an internship, or research?',
-        promptFigure: 'https://via.placeholder.com/150',
+        promptFigure: 'src/assets/professor.svg',
         options: ['Internship', 'Research'],
-        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+        figures: []
     },
     {
         prompt: 'Do you prefer individual or team work?',
-        promptFigure: 'https://via.placeholder.com/150',
+        promptFigure: 'src/assets/people.svg',
         options: ['Individual', 'Team'],
-        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+        figures: []
     },
     {
         prompt: 'Which of these fields interests you the most?',
-        promptFigure: 'https://via.placeholder.com/150',
+        promptFigure: 'src/assets/inspiration.svg',
         options: ['Finance', 'Technology', 'Health', 'Engineering'],
-        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+        figures: []
     },
     {
         prompt: 'How much time do you have to commit per week?',
-        promptFigure: 'https://via.placeholder.com/150',
+        promptFigure: 'src/assets/clock.svg',
         options: ['1-5 hours', '6-10 hours', '11-20 hours', '21+ hours'],
         figures: []
     },
     {
         prompt: 'Are you looking for paid or unpaid opportunities?',
-        promptFigure: 'https://via.placeholder.com/150',
+        promptFigure: 'src/assets/invoices.svg',
         options: ['Paid', 'Unpaid'],
-        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+        figures: []
     },
     {
         prompt: 'Do you want in-person, remote, or hybrid opportunities?',
-        promptFigure: 'https://via.placeholder.com/150',
+        promptFigure: 'src/assets/wfh.svg',
         options: ['In-person', 'Remote', 'Hybrid'],
-        figures: ['https://via.placeholder.com/150', 'https://via.placeholder.com/150', 'https://via.placeholder.com/150']
+        figures: []
     },
     
 ]

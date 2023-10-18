@@ -336,3 +336,9 @@ body {
     position: relative;
     left: 9px;
 }
+/* Testing: */
+button:not(.cardButton){
+    *{
+        color: white;
+    }
+}
