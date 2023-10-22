@@ -24,24 +24,36 @@ export default function Results() {
             variants={slideInBouncy}
         >
             <div className="resultsDisplay">
-                <Typography className="resultAnnouncement"><h1 className="resultHeading">{onboardingUser.firstName}, we found 7 oppurtunities for you!</h1></Typography>
+                <Typography className="resultAnnouncement"><h1 className="resultHeading">{onboardingUser.firstName}, we found 5 oppurtunities for you!</h1></Typography>
                 <ResultCard 
-                title={'Lorem Ipsum'} 
-                mentorName={'Dr. Zuck'}
-                desc={'The quick brown fox jumps over the lazy dog. One fish two.'}
-                avatarSrc={'src/assets/zuck-avatar.jpg'}
+                title={'Histology Research'} 
+                mentorName={'Dr. Reyes'}
+                desc={'Contribute to and learn about the latest research in Histoloy.'}
+                avatarSrc={'https://profiles.stanford.edu/proxy/api/cap/profiles/10186/resources/profilephoto/350x350.1509507155149.jpg'}
                 />
                 <ResultCard 
-                title={'Lorem Ipsum'} 
-                mentorName={'Dr. Zuck'}
-                desc={'The quick brown fox jumps over the lazy dog. One fish two.'}
-                avatarSrc={'src/assets/zuck-avatar.jpg'}
+                title={'Virology Research'} 
+                mentorName={'Dr. Avila'}
+                desc={'Learn and develop worthwhile skills in Virology research.'}
+                avatarSrc={'https://med.stanford.edu/services/api/cap/profiles/photocache.37019.jpg'}
                 />
                <ResultCard 
-                title={'Lorem Ipsum'} 
-                mentorName={'Dr. Zuck'}
-                desc={'The quick brown fox jumps over the lazy dog. One fish two.'}
-                avatarSrc={'src/assets/zuck-avatar.jpg'}
+                title={'Botany Research'} 
+                mentorName={'Dr. Ellis'}
+                desc={'Conduct experiments on plants and gain research skills.'}
+                avatarSrc={'https://med.stanford.edu/services/api/cap/profiles/photocache.24004.jpg'}
+                />
+                <ResultCard 
+                title={'Ecology Research'} 
+                mentorName={'Dr. Summers'}
+                desc={'Learn data analysis and ecosystem modeling in Ecology.'}
+                avatarSrc={'https://med.stanford.edu/services/api/cap/profiles/photocache.49740.jpg'}
+                />
+                <ResultCard 
+                title={'Zoology Research'} 
+                mentorName={'Dr. Lorem'}
+                desc={'Learn data analysis and ecosystem modeling in Ecology.'}
+                avatarSrc={'https://med.stanford.edu/services/api/cap/profiles/photocache.34839.jpg'}
                 />
             </div>
             

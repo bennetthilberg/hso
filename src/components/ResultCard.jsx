@@ -6,11 +6,11 @@ export default function ResultCard({ title, desc, mentorName, avatarSrc }) {
     return (
         <div className="resultCard">
             <div className="cardAvatarHolder">
-                <Avatar icon="user" src={avatarSrc} size={92}/>
+                <Avatar icon="user" src={avatarSrc} size={90}/>
             </div>
             <div className="cardHeader">
                 <Typography>
-                    <h2>
+                    <h2 className="cardHeaderText">
                         <span className="headerStrong">{title}</span><br />
                         with <span className="headerStrong">{mentorName}</span>
                     </h2>
